@@ -1,5 +1,5 @@
 @import url("font-awesome.min.css");
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
 /*
 	Strata by HTML5 UP
@@ -2018,7 +2018,7 @@
 				border-radius: 0.35em;
 				border: solid 3px rgba(255, 255, 255, 0.5);
 				color: #fff;
-				content: 'Conoce más';
+				content: 'View';
 				display: inline-block;
 				font-size: 0.8em;
 				font-weight: 400;
@@ -2463,20 +2463,53 @@
 /* Header */
 
 	#header {
-		background-color: black;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-align-items: -moz-flex-end;
+		-webkit-align-items: -webkit-flex-end;
+		-ms-align-items: -ms-flex-end;
+		align-items: flex-end;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		background-color: #1f1815;
 		background-attachment: scroll,								fixed;
+		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								auto 100%;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
-		padding: 8em 4em 0 0;
+		padding: 8em 4em;
 		position: fixed;
 		text-align: right;
 		top: 0;
 		width: 35%;
 	}
+
+		#header > * {
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+			width: 100%;
+		}
+
+		#header > .inner {
+			-moz-flex-grow: 1;
+			-webkit-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
+			margin: 0 0 2em 0;
+		}
 
 		#header strong, #header b {
 			color: #ffffff;
@@ -2500,48 +2533,39 @@
 
 /* Footer */
 
-	#footer {
-		bottom: 0;
-		left: 0;
-		padding: 0 4em 6em 0;
-		position: fixed;
-		text-align: right;
-		width: 35%;
+	#footer .icons {
+		margin: 1em 0 0 0;
 	}
 
-		#footer .icons {
-			margin: 1em 0 0 0;
-		}
-
-			#footer .icons a {
-				color: rgba(255, 255, 255, 0.4);
-			}
-
-		#footer .copyright {
+		#footer .icons a {
 			color: rgba(255, 255, 255, 0.4);
-			font-size: 0.8em;
-			list-style: none;
-			margin: 1em 0 0 0;
-			padding: 0;
 		}
 
-			#footer .copyright li {
-				border-left: solid 1px rgba(255, 255, 255, 0.25);
-				display: inline-block;
-				line-height: 1em;
-				margin-left: 0.75em;
-				padding-left: 0.75em;
+	#footer .copyright {
+		color: rgba(255, 255, 255, 0.4);
+		font-size: 0.8em;
+		list-style: none;
+		margin: 1em 0 0 0;
+		padding: 0;
+	}
+
+		#footer .copyright li {
+			border-left: solid 1px rgba(255, 255, 255, 0.25);
+			display: inline-block;
+			line-height: 1em;
+			margin-left: 0.75em;
+			padding-left: 0.75em;
+		}
+
+			#footer .copyright li:first-child {
+				border-left: 0;
+				margin-left: 0;
+				padding-left: 0;
 			}
 
-				#footer .copyright li:first-child {
-					border-left: 0;
-					margin-left: 0;
-					padding-left: 0;
-				}
-
-				#footer .copyright li a {
-					color: inherit;
-				}
+			#footer .copyright li a {
+				color: inherit;
+			}
 
 /* Main */
 
@@ -2554,8 +2578,8 @@
 
 		#main > section {
 			border-top: solid 2px #efefef;
-			margin: 1em 0 0 0;
-			padding: 1em 0 0 0;
+			margin: 4em 0 0 0;
+			padding: 4em 0 0 0;
 		}
 
 			#main > section:first-child {
@@ -2863,18 +2887,13 @@
 
 		/* Footer */
 
-			#footer {
-				padding: 0 3em 5em 3em;
-				width: 30%;
+			#footer .copyright li {
+				border-left-width: 0;
+				display: block;
+				line-height: 2.25em;
+				margin-left: 0;
+				padding-left: 0;
 			}
-
-				#footer .copyright li {
-					border-left-width: 0;
-					display: block;
-					line-height: 2.25em;
-					margin-left: 0;
-					padding-left: 0;
-				}
 
 		/* Main */
 
@@ -2915,6 +2934,7 @@
 				text-align: center;
 				top: auto;
 				width: 100%;
+				display: block;
 			}
 
 				#header h1 {
